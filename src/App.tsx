@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { BANNER_SIZES, type BannerSize } from './bannerConfig';
-import UrlInput from './components/UrlInput';
 import SizeSelector from './components/SizeSelector';
 import RowIndexSelector from './components/RowIndexSelector';
 import BannerIframe from './components/BannerIframe';
@@ -85,10 +84,6 @@ export default function App() {
       </header>
 
       <main className="app-main-centered">
-        <div className="controls-card">
-          <UrlInput />
-        </div>
-
         <div className="controls-card">
           <SizeSelector selected={selectedSize} onChange={setSelectedSize} />
           <RowIndexSelector rowIndex={rowIndex} onChange={setRowIndex} />

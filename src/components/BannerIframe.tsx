@@ -21,7 +21,7 @@ export default function BannerIframe({ size, rowIndex, refreshKey, onLoadStart, 
     <div className="banner-iframe-wrapper">
       <iframe
         ref={iframeRef}
-        key={refreshKey}
+        key={`${refreshKey}-${rowIndex}`}
         src={bannerUrl}
         width={size.width}
         height={size.height}
