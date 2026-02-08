@@ -92,6 +92,46 @@ body {
   box-shadow: 0 0 0 2px rgba(0, 43, 92, 0.15);
 }
 
+/* ── URL input row ─────────────────────────────────────────────────── */
+.url-control {
+  flex: 1 1 100%;
+}
+
+.url-row {
+  display: flex;
+  gap: 8px;
+}
+
+.url-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.url-row input:focus {
+  outline: none;
+  border-color: #002b5c;
+  box-shadow: 0 0 0 2px rgba(0, 43, 92, 0.15);
+}
+
+.url-row button {
+  padding: 8px 16px;
+  background: #002b5c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.url-row button:hover {
+  background: #003d80;
+}
+
 .refresh-btn {
   padding: 8px 16px;
   background: #002b5c;

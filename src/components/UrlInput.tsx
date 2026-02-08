@@ -1,20 +1,14 @@
 import { useState } from 'react';
 
-interface UrlInputProps {
-  onLoadPage: (url: string) => void;
-}
-
-export default function UrlInput({ onLoadPage }: UrlInputProps) {
+export default function UrlInput() {
   const [url, setUrl] = useState('https://www.theblueground.com');
 
-  const handleLoad = () => {
+  const handleOpen = () => {
     let normalizedUrl = url.trim();
     if (!normalizedUrl) return;
-    // Prepend https:// if no protocol
     if (!/^https?:\/\//i.test(normalizedUrl)) {
       normalizedUrl = 'https://' + normalizedUrl;
     }
-    // Basic URL validation
     try {
       new URL(normalizedUrl);
     } catch {
@@ -22,22 +16,22 @@ export default function UrlInput({ onLoadPage }: UrlInputProps) {
       return;
     }
     setUrl(normalizedUrl);
-    onLoadPage(normalizedUrl);
+    window.open(normalizedUrl, '_blank');
   };
 
   return (
-    <div className="control-group">
-      <label htmlFor="url-input">Blueground URL</label>
+    <div className="control-group url-control">
+      <label htmlFor="url-input">Blueground Page</label>
       <div className="url-row">
         <input
           id="url-input"
           type="text"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleLoad()}
+          onKeyDown={(e) => e.key === 'Enter' && handleOpen()}
           placeholder="https://www.theblueground.com/..."
         />
-        <button onClick={handleLoad}>Load Page</button>
+        <button onClick={handleOpen}>Open in New Tab</button>
       </div>
     </div>
   );

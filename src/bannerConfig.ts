@@ -11,4 +11,5 @@ export const BANNER_SIZES: BannerSize[] = [
   { id: '336x280', label: '336 × 280', width: 336, height: 280, path: '/banners/336x280/index.html' },
   { id: '728x90',  label: '728 × 90',  width: 728, height: 90,  path: '/banners/728x90/index.html' },
   { id: '160x600', label: '160 × 600', width: 160, height: 600, path: '/banners/160x600/index.html' },
+  { id: '300x600', label: '300 × 600', width: 300, height: 600, path: '/banners/300x600/index.html' },
 ];
