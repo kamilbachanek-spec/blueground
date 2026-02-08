@@ -7,6 +7,7 @@ export default defineConfig({
   publicDir: 'public',
   server: {
     port: 5173,
+    host: true,
     // Allow serving files from the project root (for banners/)
     fs: {
       allow: ['..'],
