@@ -1,18 +1,14 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { BANNER_SIZES, type BannerSize } from './bannerConfig';
-import UrlInput from './components/UrlInput';
 import SizeSelector from './components/SizeSelector';
 import RowIndexSelector from './components/RowIndexSelector';
 import BannerIframe from './components/BannerIframe';
-import ViewportPresets, { VIEWPORT_PRESETS, type ViewportPreset } from './components/ViewportPresets';
 import Diagnostics, { type LoadLogEntry } from './components/Diagnostics';
 
 export default function App() {
-  const [pageUrl, setPageUrl] = useState('https://www.theblueground.com');
   const [selectedSize, setSelectedSize] = useState<BannerSize>(BANNER_SIZES[0]);
   const [rowIndex, setRowIndex] = useState(0);
   const [refreshKey, setRefreshKey] = useState(Date.now());
-  const [viewport, setViewport] = useState<ViewportPreset>(VIEWPORT_PRESETS[0]);
 
   // Load timing
   const loadStartRef = useRef<number>(0);
@@ -87,53 +83,32 @@ export default function App() {
         </span>
       </header>
 
-      <main className="app-main">
-        {/* ── Left column: Blueground page iframe ─────────────────── */}
-        <section className="page-column">
-          <div
-            className="page-iframe-container"
-            style={{ maxWidth: viewport.width ?? '100%' }}
-          >
-            <iframe
-              src={pageUrl}
-              title="Blueground page preview"
-              className="page-iframe"
-              sandbox="allow-scripts allow-same-origin allow-popups"
-            />
-          </div>
-        </section>
+      <main className="app-main-centered">
+        <div className="controls-card">
+          <SizeSelector selected={selectedSize} onChange={setSelectedSize} />
+          <RowIndexSelector rowIndex={rowIndex} onChange={setRowIndex} />
+          <button className="refresh-btn" onClick={handleRefresh}>
+            Refresh Banner
+          </button>
+        </div>
 
-        {/* ── Right column: controls + banner + diagnostics ───────── */}
-        <section className="banner-column">
-          <div className="controls-card">
-            <UrlInput onLoadPage={setPageUrl} />
-            <ViewportPresets selected={viewport} onChange={setViewport} />
-            <hr />
-            <SizeSelector selected={selectedSize} onChange={setSelectedSize} />
-            <RowIndexSelector rowIndex={rowIndex} onChange={setRowIndex} />
-            <button className="refresh-btn" onClick={handleRefresh}>
-              Refresh Banner
-            </button>
-          </div>
-
-          <div className="banner-card">
-            <BannerIframe
-              size={selectedSize}
-              rowIndex={rowIndex}
-              refreshKey={refreshKey}
-              onLoadStart={handleLoadStart}
-              onLoadEnd={handleLoadEnd}
-            />
-          </div>
-
-          <Diagnostics
+        <div className="banner-card">
+          <BannerIframe
             size={selectedSize}
             rowIndex={rowIndex}
-            bannerUrl={bannerUrl}
-            loadTimeMs={loadTimeMs}
-            log={log}
+            refreshKey={refreshKey}
+            onLoadStart={handleLoadStart}
+            onLoadEnd={handleLoadEnd}
           />
-        </section>
+        </div>
+
+        <Diagnostics
+          size={selectedSize}
+          rowIndex={rowIndex}
+          bannerUrl={bannerUrl}
+          loadTimeMs={loadTimeMs}
+          log={log}
+        />
       </main>
     </div>
   );
