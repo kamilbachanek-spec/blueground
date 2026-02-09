@@ -89,8 +89,31 @@ body {
   flex: 1 1 100%;
 }
 
-.row-selector select {
-  max-width: 100%;
+.row-info {
+  font-size: 0.8rem;
+  color: #444;
+  padding: 6px 10px;
+  background: #f0f4f8;
+  border-radius: 4px;
+  margin-top: 2px;
+}
+
+.row-info-city {
+  font-weight: 600;
+  color: #002b5c;
+}
+
+.row-info-sep {
+  color: #aaa;
+}
+
+.row-info-name {
+  color: #333;
+}
+
+.row-info-price {
+  font-weight: 600;
+  color: #4fc3f7;
 }
 
 .control-group input:focus,
