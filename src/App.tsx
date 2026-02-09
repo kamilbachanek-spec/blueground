@@ -86,7 +86,7 @@ export default function App() {
       <main className="app-main-centered">
         <div className="controls-card">
           <SizeSelector selected={selectedSize} onChange={setSelectedSize} />
-          <RowIndexSelector rowIndex={rowIndex} onChange={setRowIndex} />
+          <RowIndexSelector rowIndex={rowIndex} onChange={setRowIndex} size={selectedSize} />
           <button className="refresh-btn" onClick={handleRefresh}>
             Refresh Banner
           </button>

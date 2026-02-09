@@ -85,6 +85,14 @@ body {
   font-size: 0.9rem;
 }
 
+.row-selector {
+  flex: 1 1 100%;
+}
+
+.row-selector select {
+  max-width: 100%;
+}
+
 .control-group input:focus,
 .control-group select:focus {
   outline: none;
