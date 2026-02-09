@@ -1,14 +1,13 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { BANNER_SIZES, type BannerSize } from './bannerConfig';
 import SizeSelector from './components/SizeSelector';
-import RowIndexSelector from './components/RowIndexSelector';
 import BannerIframe from './components/BannerIframe';
 import Diagnostics, { type LoadLogEntry } from './components/Diagnostics';
 
 export default function App() {
   const [selectedSize, setSelectedSize] = useState<BannerSize>(BANNER_SIZES[0]);
-  const [rowIndex, setRowIndex] = useState(0);
   const [refreshKey, setRefreshKey] = useState(Date.now());
+  const rowIndex = 0;
 
   // Load timing
   const loadStartRef = useRef<number>(0);
@@ -86,7 +85,6 @@ export default function App() {
       <main className="app-main-centered">
         <div className="controls-card">
           <SizeSelector selected={selectedSize} onChange={setSelectedSize} />
-          <RowIndexSelector rowIndex={rowIndex} onChange={setRowIndex} size={selectedSize} />
           <button className="refresh-btn" onClick={handleRefresh}>
             Refresh Banner
           </button>
