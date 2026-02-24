@@ -1,0 +1,131 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.banner {
+  width: 728px;
+  height: 90px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #002b5c;
+  cursor: pointer;
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  animation: fadeZoom 1s 0.3s ease-out forwards;
+}
+
+@keyframes fadeZoom {
+  to { opacity: 0.3; transform: scale(1); }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 43, 92, 0.95) 0%,
+    rgba(0, 43, 92, 0.7) 40%,
+    rgba(0, 43, 92, 0.85) 100%
+  );
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.left {
+  flex: 0 0 auto;
+  margin-right: 24px;
+  opacity: 0;
+  animation: fadeIn 0.5s 0.4s ease-out forwards;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.center {
+  flex: 1;
+  min-width: 0;
+  opacity: 0;
+  animation: slideLeft 0.5s 0.7s ease-out forwards;
+}
+
+.city {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4fc3f7;
+  margin-bottom: 2px;
+}
+
+.property-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 24px;
+  opacity: 0;
+  animation: slideLeft 0.5s 1s ease-out forwards;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4fc3f7;
+  white-space: nowrap;
+}
+
+.cta {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #4fc3f7;
+  color: #002b5c;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: #81d4fa;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
