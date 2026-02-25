@@ -1,0 +1,158 @@
+/* ============================================
+   Blueground HTML5 Banner – 320×50 (mobile banner)
+   Typography: Laca Regular (400). Text-only variant.
+   ============================================ */
+
+@font-face {
+  font-family: 'Laca';
+  src: url('fonts/Laca Regular.woff2') format('woff2'),
+       url('fonts/Laca Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  height: 50px;
+  overflow: hidden;
+  font-family: 'Laca', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #E9E9EA;
+  opacity: 0;
+  animation: bannerFadeInAll 0.6s linear forwards;
+}
+
+.banner__click-area {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+}
+
+.banner__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.banner__hero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
+}
+
+.banner__content {
+  position: absolute;
+  inset: 0;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.banner__logo-wrap {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.1s forwards;
+}
+
+.banner__logo {
+  display: block;
+  height: 14px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+}
+
+.banner__intro-message {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1 1 auto;
+  min-width: 0;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.3s forwards;
+}
+
+.banner__cta {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #fff;
+  color: #233759;
+  font-size: 10px;
+  font-weight: 400;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.5s forwards, ctaFloat 2.4s ease-in-out 1.2s 12;
+}
+
+@keyframes ctaFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes bannerFadeInAll {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bannerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

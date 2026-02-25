@@ -10,6 +10,9 @@ All sizes in one place. Pure HTML, CSS, vanilla JS — no frameworks.
 | 300×600 | **210-1563**   | `300x600/` |
 | 728×90  | **211-1602**   | `728x90/`  |
 | 336×280 | 210-1609       | `336x280/` |
+| 970×250 | **216-1752**   | `970x250/` |
+| 160×600 | **216-1770**   | `160x600/` |
+| 320×100 | **216-1735**   | `320x100/` |
 
 Figma file: `UEbgHMAGWVei96S580YHly` (-INT–The-Blue-Ground)
 
@@ -21,6 +24,9 @@ banners/
 ├── 300x600/   ← Figma 210-1563
 ├── 728x90/    ← Figma 211-1602
 ├── 336x280/
+├── 970x250/   ← Figma 216-1752 (billboard)
+├── 160x600/   ← Figma 216-1770 (wide skyscraper)
+├── 320x100/   ← Figma 216-1735 (mobile leaderboard)
 └── README.md
 ```
 
@@ -42,6 +48,9 @@ cp feed.csv banners/300x250/
 cp feed.csv banners/300x600/
 cp feed.csv banners/728x90/
 cp feed.csv banners/336x280/
+cp feed.csv banners/970x250/
+cp feed.csv banners/160x600/
+cp feed.csv banners/320x100/
 ```
 
 **2. Start a local server**
@@ -62,6 +71,9 @@ npx -y serve -p 8080
 - 300×600: http://localhost:8080/banners/300x600/
 - 728×90: http://localhost:8080/banners/728x90/
 - 336×280: http://localhost:8080/banners/336x280/
+- 970×250: http://localhost:8080/banners/970x250/
+- 160×600: http://localhost:8080/banners/160x600/
+- 320×100: http://localhost:8080/banners/320x100/
 
 You should see a property from the feed, the logo, and the “Book now!” CTA. Refreshing cycles to the next row (round‑robin).
 

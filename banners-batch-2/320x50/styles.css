@@ -1,0 +1,149 @@
+/* ============================================
+   Batch 2 – Sophia | 320×50 (mobile leaderboard small)
+   Layout: Image | Logo | Headline | CTA (horizontal)
+   ============================================ */
+
+@font-face {
+  font-family: 'Laca';
+  src: url('fonts/Laca Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  height: 50px;
+  overflow: hidden;
+  font-family: 'Laca', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+}
+
+.banner {
+  position: relative;
+  width: 320px;
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid #E9E9EA;
+  background: #fff;
+  opacity: 0;
+  animation: bannerFadeInAll 0.6s linear forwards;
+}
+
+.banner__click-area {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+}
+
+.banner__content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 7px 10px;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.banner__carousel-wrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 36px;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  animation: bannerFadeIn 0.4s ease-out 0.1s forwards;
+}
+
+.banner__carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner__carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.banner__carousel-slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.banner__carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner__logo-wrap {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: bannerFadeIn 0.4s ease-out 0.15s forwards;
+}
+
+.banner__logo {
+  display: block;
+  height: 11px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+}
+
+.banner__headline {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.44px;
+  color: #233759;
+  opacity: 0;
+  animation: bannerFadeIn 0.4s ease-out 0.2s forwards;
+}
+
+.banner__cta {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  background: #233759;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: -0.36px;
+  line-height: 1;
+  border-radius: 282px;
+  white-space: nowrap;
+  opacity: 0;
+  animation: bannerFadeIn 0.4s ease-out 0.3s forwards;
+}
+
+/* Hide elements not used in this size */
+.banner__tags,
+.banner__price { display: none; }
+
+@keyframes bannerFadeInAll {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bannerFadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

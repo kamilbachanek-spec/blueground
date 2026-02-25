@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueground – Banner Ads Preview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #233759;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #233759;
+      color: #fff;
+      padding: 48px 40px 40px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .header p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .nav {
+      display: flex;
+      gap: 12px;
+      padding: 24px 40px;
+      border-bottom: 1px solid #e0e0e0;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #f0f2f5;
+      color: #233759;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+
+    .nav a:hover {
+      background: #e0e5ec;
+    }
+
+    .nav .count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: #233759;
+      color: #fff;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .main {
+      padding: 40px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #233759;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .batch-label {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    .batch-label--1 { background: #e0e8f7; color: #233759; }
+    .batch-label--2 { background: #e8f0e0; color: #1a6b1a; }
+
+    .group-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #233759;
+      border-bottom: 2px solid #233759;
+      padding-bottom: 6px;
+      margin: 40px 0 20px;
+    }
+
+    .group-title:first-of-type { margin-top: 0; }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      padding: 20px;
+      position: relative;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .card .meta {
+      font-size: 12px;
+      color: #888;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .card iframe {
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      display: block;
+      background: #fff;
+    }
+
+    .divider {
+      height: 1px;
+      background: #e0e0e0;
+      margin: 50px 0 40px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      padding: 20px 40px 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Blueground — Banner Ads</h1>
+    <p>HTML5 display ad banners — 2 batches, 40 total sizes</p>
+  </div>
+
+  <div class="nav">
+    <a href="#batch-1">Batch 1 — Awareness <span class="count">20</span></a>
+    <a href="#batch-2">Batch 2 — Sophia / London <span class="count">20</span></a>
+    <a href="batch-1/preview.html">↗ Batch 1 standalone</a>
+    <a href="batch-2/preview.html">↗ Batch 2 standalone</a>
+  </div>
+
+  <div class="main">
+
+    <!-- ================================================================
+         BATCH 1
+         ================================================================ -->
+    <div id="batch-1">
+      <h2 class="section-title">Batch 1 — Awareness <span class="batch-label batch-label--1">20 sizes</span></h2>
+      <p class="section-desc">Top-of-funnel awareness campaign. Property photos, welcome message, and dynamic neighborhood tags.</p>
+
+      <h4 class="group-title">Rectangles &amp; Squares</h4>
+      <div class="grid">
+        <div class="card">
+          <h3>Small Square</h3>
+          <div class="meta">200×200</div>
+          <iframe src="batch-1/200x200/index.html" width="200" height="200" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Square</h3>
+          <div class="meta">250×250</div>
+          <iframe src="batch-1/250x250/index.html" width="250" height="250" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Medium Rectangle</h3>
+          <div class="meta">300×250</div>
+          <iframe src="batch-1/300x250/index.html" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Large Rectangle</h3>
+          <div class="meta">336×280</div>
+          <iframe src="batch-1/336x280/index.html" width="336" height="280" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <h4 class="group-title">Portrait &amp; Vertical</h4>
+      <div class="grid">
+        <div class="card">
+          <h3>Triple Widescreen</h3>
+          <div class="meta">250×360</div>
+          <iframe src="batch-1/250x360/index.html" width="250" height="360" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Netboard</h3>
+          <div class="meta">240×400</div>
+          <iframe src="batch-1/240x400/index.html" width="240" height="400" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Skyscraper</h3>
+          <div class="meta">120×600</div>
+          <iframe src="batch-1/120x600/index.html" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Wide Skyscraper</h3>
+          <div class="meta">160×600</div>
+          <iframe src="batch-1/160x600/index.html" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Half Page</h3>
+          <div class="meta">300×600</div>
+          <iframe src="batch-1/300x600/index.html" width="300" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <div class="card" style="display:inline-block">
+        <h3>Portrait</h3>
+        <div class="meta">300×1050</div>
+        <iframe src="batch-1/300x1050/index.html" width="300" height="1050" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <h4 class="group-title">Horizontal &amp; Leaderboards</h4>
+      <div class="grid">
+        <div class="card">
+          <h3>Mobile Banner</h3>
+          <div class="meta">300×50</div>
+          <iframe src="batch-1/300x50/index.html" width="300" height="50" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Mobile Banner</h3>
+          <div class="meta">320×50</div>
+          <iframe src="batch-1/320x50/index.html" width="320" height="50" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Mobile Leaderboard</h3>
+          <div class="meta">320×100</div>
+          <iframe src="batch-1/320x100/index.html" width="320" height="100" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Full Banner</h3>
+        <div class="meta">468×60</div>
+        <iframe src="batch-1/468x60/index.html" width="468" height="60" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Leaderboard</h3>
+        <div class="meta">728×90</div>
+        <iframe src="batch-1/728x90/index.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Large Leaderboard</h3>
+        <div class="meta">970×90</div>
+        <iframe src="batch-1/970x90/index.html" width="970" height="90" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Top Banner</h3>
+        <div class="meta">930×180</div>
+        <iframe src="batch-1/930x180/index.html" width="930" height="180" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Panorama</h3>
+        <div class="meta">980×120</div>
+        <iframe src="batch-1/980x120/index.html" width="980" height="120" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <h4 class="group-title">Wide Formats</h4>
+
+      <div class="card">
+        <h3>Netboard Wide</h3>
+        <div class="meta">580×400</div>
+        <iframe src="batch-1/580x400/index.html" width="580" height="400" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Billboard</h3>
+        <div class="meta">970×250</div>
+        <iframe src="batch-1/970x250/index.html" width="970" height="250" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ================================================================
+         BATCH 2
+         ================================================================ -->
+    <div id="batch-2">
+      <h2 class="section-title">Batch 2 — Sophia / London <span class="batch-label batch-label--2">20 sizes</span></h2>
+      <p class="section-desc">Mid-funnel, London-focused. Carousel of apartment photos, neighborhood tags, "Explore now" CTA, and dynamic pricing.</p>
+
+      <h4 class="group-title">Rectangles &amp; Squares</h4>
+      <div class="grid">
+        <div class="card">
+          <h3>Small Square</h3>
+          <div class="meta">200×200</div>
+          <iframe src="batch-2/200x200/index.html" width="200" height="200" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Square</h3>
+          <div class="meta">250×250</div>
+          <iframe src="batch-2/250x250/index.html" width="250" height="250" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Medium Rectangle</h3>
+          <div class="meta">300×250</div>
+          <iframe src="batch-2/300x250/index.html" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Large Rectangle</h3>
+          <div class="meta">336×280</div>
+          <iframe src="batch-2/336x280/index.html" width="336" height="280" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <h4 class="group-title">Portrait &amp; Vertical</h4>
+      <div class="grid">
+        <div class="card">
+          <h3>Triple Widescreen</h3>
+          <div class="meta">250×360</div>
+          <iframe src="batch-2/250x360/index.html" width="250" height="360" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Netboard</h3>
+          <div class="meta">240×400</div>
+          <iframe src="batch-2/240x400/index.html" width="240" height="400" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Skyscraper</h3>
+          <div class="meta">120×600</div>
+          <iframe src="batch-2/120x600/index.html" width="120" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Wide Skyscraper</h3>
+          <div class="meta">160×600</div>
+          <iframe src="batch-2/160x600/index.html" width="160" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Half Page</h3>
+          <div class="meta">300×600</div>
+          <iframe src="batch-2/300x600/index.html" width="300" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <div class="card" style="display:inline-block">
+        <h3>Portrait</h3>
+        <div class="meta">300×1050</div>
+        <iframe src="batch-2/300x1050/index.html" width="300" height="1050" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <h4 class="group-title">Horizontal &amp; Leaderboards</h4>
+      <div class="grid">
+        <div class="card">
+          <h3>Mobile Banner</h3>
+          <div class="meta">300×50</div>
+          <iframe src="batch-2/300x50/index.html" width="300" height="50" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Mobile Banner</h3>
+          <div class="meta">320×50</div>
+          <iframe src="batch-2/320x50/index.html" width="320" height="50" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="card">
+          <h3>Mobile Leaderboard</h3>
+          <div class="meta">320×100</div>
+          <iframe src="batch-2/320x100/index.html" width="320" height="100" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Full Banner</h3>
+        <div class="meta">468×60</div>
+        <iframe src="batch-2/468x60/index.html" width="468" height="60" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Leaderboard</h3>
+        <div class="meta">728×90</div>
+        <iframe src="batch-2/728x90/index.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Large Leaderboard</h3>
+        <div class="meta">970×90</div>
+        <iframe src="batch-2/970x90/index.html" width="970" height="90" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Top Banner</h3>
+        <div class="meta">930×180</div>
+        <iframe src="batch-2/930x180/index.html" width="930" height="180" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Panorama</h3>
+        <div class="meta">980×120</div>
+        <iframe src="batch-2/980x120/index.html" width="980" height="120" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <h4 class="group-title">Wide Formats</h4>
+
+      <div class="card">
+        <h3>Netboard Wide</h3>
+        <div class="meta">580×400</div>
+        <iframe src="batch-2/580x400/index.html" width="580" height="400" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>Billboard</h3>
+        <div class="meta">970×250</div>
+        <iframe src="batch-2/970x250/index.html" width="970" height="250" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">Blueground — HTML5 Display Ads — 40 sizes across 2 batches</div>
+
+</body>
+</html>

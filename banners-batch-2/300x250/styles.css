@@ -1,0 +1,195 @@
+/* ============================================
+   Batch 2 – Sophia persona | 300×250
+   Vertical layout: Logo → Image → Tags → Headline → CTA+Price
+   Figma ref: 210-1621
+   ============================================ */
+
+@font-face {
+  font-family: 'Laca';
+  src: url('fonts/Laca Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  font-family: 'Laca', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+}
+
+.banner {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid #E9E9EA;
+  background: #fff;
+  opacity: 0;
+  animation: bannerFadeInAll 0.6s linear forwards;
+}
+
+.banner__click-area {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+}
+
+/* Main vertical column */
+.banner__content {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 268px;
+  height: 218px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+/* Row 1: Logo */
+.banner__logo-wrap {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.1s forwards;
+}
+
+.banner__logo {
+  display: block;
+  height: 14px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+/* Row 2: Carousel image – full width, fixed 88px height */
+.banner__carousel-wrap {
+  flex-shrink: 0;
+  width: 268px;
+  height: 88px;
+  border-radius: 16px 2px 2px 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.2s forwards;
+}
+
+.banner__carousel {
+  position: relative;
+  width: 268px;
+  height: 88px;
+}
+
+.banner__carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.banner__carousel-slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.banner__carousel-slide img {
+  width: 268px;
+  height: 88px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Row 3: Text block – Tags + Headline + Footer */
+.banner__text-block {
+  flex-shrink: 0;
+  width: 268px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.3s forwards;
+}
+
+.banner__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  align-items: center;
+}
+
+.banner__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 13px;
+  padding: 0 5px;
+  border: 0.6px solid #233759;
+  border-radius: 52px;
+  font-size: 8.5px;
+  font-weight: 400;
+  color: #233759;
+  white-space: nowrap;
+  line-height: 0.8;
+  letter-spacing: -0.34px;
+}
+
+.banner__headline {
+  margin: 0;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.88px;
+  color: #233759;
+}
+
+.banner__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.banner__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 30px;
+  background: #233759;
+  color: #fff;
+  font-size: 11.2px;
+  font-weight: 400;
+  letter-spacing: -0.45px;
+  line-height: 1.2;
+  border-radius: 254px;
+  white-space: nowrap;
+}
+
+.banner__price {
+  font-size: 12px;
+  font-weight: 400;
+  color: #233759;
+  letter-spacing: -0.34px;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: opacity 0.25s linear;
+}
+
+@keyframes bannerFadeInAll {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bannerFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

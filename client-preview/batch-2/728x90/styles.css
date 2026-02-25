@@ -1,0 +1,159 @@
+/* ============================================
+   Batch 2 – Sophia | 728×90 (leaderboard)
+   Figma ref: 210-1670
+   Layout: Headline (left) | Image (center) | Logo+CTA (right)
+   No tags, no price in this size.
+   ============================================ */
+
+@font-face {
+  font-family: 'Laca';
+  src: url('fonts/Laca Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 728px;
+  height: 90px;
+  overflow: hidden;
+  font-family: 'Laca', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+}
+
+.banner {
+  position: relative;
+  width: 728px;
+  height: 90px;
+  overflow: hidden;
+  border: 1px solid #E9E9EA;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0;
+  animation: bannerFadeInAll 0.6s linear forwards;
+}
+
+.banner__click-area {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+}
+
+/* Left: Headline – 278px wide, left-aligned */
+.banner__headline {
+  position: absolute;
+  left: 24px;
+  top: 21px;
+  width: 278px;
+  margin: 0;
+  font-size: 22.3px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.97px;
+  color: #233759;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.1s forwards;
+}
+
+/* Center: Carousel image */
+.banner__carousel-wrap {
+  position: absolute;
+  left: 334px;
+  top: 9px;
+  width: 243px;
+  height: 72px;
+  border-radius: 16px 2px 2px 2px;
+  overflow: hidden;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.2s forwards;
+}
+
+.banner__carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner__carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.banner__carousel-slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.banner__carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right: Logo + CTA stacked, 12px gap */
+.banner__right {
+  position: absolute;
+  right: 17px;
+  top: 0;
+  bottom: 0;
+  width: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  animation: bannerFadeIn 0.5s ease-out 0.1s forwards;
+}
+
+.banner__logo-wrap {
+  width: 100%;
+  text-align: right;
+}
+
+.banner__logo {
+  display: block;
+  height: 24px;
+  width: auto;
+  max-width: 105px;
+  object-fit: contain;
+  margin-left: auto;
+}
+
+.banner__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 9px 34px;
+  background: #233759;
+  color: #fff;
+  font-size: 12.4px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  border-radius: 282px;
+  white-space: nowrap;
+}
+
+@keyframes bannerFadeInAll {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bannerFadeIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
